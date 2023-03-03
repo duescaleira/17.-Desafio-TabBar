@@ -8,13 +8,14 @@
 import UIKit
 
 class Tela01VC: UIViewController {
-
+    
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var editPictureButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var cameraButton: UIButton!
     
     var data: [Profile] = []
     let imagePicker: UIImagePickerController = UIImagePickerController()
@@ -24,6 +25,7 @@ class Tela01VC: UIViewController {
         configElements()
         configTableView()
         configImagePicker()
+//        view.backgroundColor =
     }
     
     func configImagePicker() {
@@ -33,7 +35,7 @@ class Tela01VC: UIViewController {
     func configElements() {
         nameLabel.text = "Nome:"
         profileImageView.image = UIImage(systemName: "person.circle.fill")
-        profileImageView.tintColor = .black
+//        profileImageView.tintColor = .black
         profileImageView.clipsToBounds = true // AS BORDAS PODEM SOFRER ALTERAÇÕES
         profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
         profileImageView.contentMode = .scaleAspectFill
@@ -45,15 +47,18 @@ class Tela01VC: UIViewController {
         tableView.dataSource = self
         tableView.register(CustomTableViewCell.nib(), forCellReuseIdentifier: CustomTableViewCell.identifier)
     }
-
-
+    
+    
+    @IBAction func tappedCameraButton(_ sender: UIButton) {
+        
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .camera
+        present(imagePicker, animated: true)
+        
+    }
     @IBAction func tappedEditPictureButton(_ sender: UIButton) {
         imagePicker.allowsEditing = false
-//        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-//            imagePicker.sourceType = .camera
-//        } else {
-            imagePicker.sourceType = .photoLibrary
-//        }
+        imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true)
     }
     
@@ -69,7 +74,7 @@ class Tela01VC: UIViewController {
 extension Tela01VC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
-       
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

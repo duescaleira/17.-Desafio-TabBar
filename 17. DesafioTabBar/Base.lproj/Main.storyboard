@@ -55,27 +55,40 @@
                                     <constraint firstAttribute="width" constant="150" id="qHD-NF-MSz"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ja-KW-xfP">
-                                <rect key="frame" x="155.5" y="258" width="103" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Editar foto"/>
-                                <connections>
-                                    <action selector="tappedEditPictureButton:" destination="Lvg-hf-PHe" eventType="touchUpInside" id="m96-GD-yER"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="PAz-cL-Qty">
+                                <rect key="frame" x="121.5" y="258" width="171.5" height="34.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ja-KW-xfP">
+                                        <rect key="frame" x="0.0" y="0.0" width="99" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Biblioteca"/>
+                                        <connections>
+                                            <action selector="tappedEditPictureButton:" destination="Lvg-hf-PHe" eventType="touchUpInside" id="m96-GD-yER"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8or-og-0D6">
+                                        <rect key="frame" x="116" y="0.0" width="55.5" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="camera.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="tappedCameraButton:" destination="Lvg-hf-PHe" eventType="touchUpInside" id="XsM-K0-JUv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bE9-Ch-xBv">
-                                <rect key="frame" x="20" y="313" width="374" height="21"/>
+                                <rect key="frame" x="20" y="313" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nsU-Jz-E5W">
-                                <rect key="frame" x="20" y="359" width="374" height="34"/>
+                                <rect key="frame" x="20" y="358.5" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OuQ-lv-xT9">
-                                <rect key="frame" x="159" y="418" width="96" height="35"/>
+                                <rect key="frame" x="159.5" y="417.5" width="95.5" height="34.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Adicionar"/>
                                 <connections>
@@ -83,34 +96,35 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pk7-C0-t6y">
-                                <rect key="frame" x="0.0" y="473" width="414" height="340"/>
+                                <rect key="frame" x="0.0" y="472" width="414" height="341"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KjQ-94-ftf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="PAz-cL-Qty" firstAttribute="top" secondItem="qwA-2y-c1d" secondAttribute="bottom" constant="25" id="3UB-fa-Mac"/>
                             <constraint firstItem="KjQ-94-ftf" firstAttribute="trailing" secondItem="pk7-C0-t6y" secondAttribute="trailing" id="5tX-ov-qGl"/>
                             <constraint firstItem="KjQ-94-ftf" firstAttribute="bottom" secondItem="pk7-C0-t6y" secondAttribute="bottom" id="9h9-D5-HhN"/>
                             <constraint firstItem="OuQ-lv-xT9" firstAttribute="centerX" secondItem="Ssu-ZK-rNe" secondAttribute="centerX" id="Ahj-fo-tu1"/>
+                            <constraint firstItem="bE9-Ch-xBv" firstAttribute="top" secondItem="PAz-cL-Qty" secondAttribute="bottom" constant="20.5" id="BhU-Qq-ljY"/>
                             <constraint firstItem="nsU-Jz-E5W" firstAttribute="top" secondItem="bE9-Ch-xBv" secondAttribute="bottom" constant="25" id="KOQ-mY-ZVn"/>
                             <constraint firstItem="OuQ-lv-xT9" firstAttribute="top" secondItem="nsU-Jz-E5W" secondAttribute="bottom" constant="25" id="MIL-JT-kON"/>
-                            <constraint firstItem="0ja-KW-xfP" firstAttribute="top" secondItem="qwA-2y-c1d" secondAttribute="bottom" constant="25" id="NYq-kl-T2d"/>
                             <constraint firstItem="KjQ-94-ftf" firstAttribute="trailing" secondItem="bE9-Ch-xBv" secondAttribute="trailing" constant="20" id="PQv-4T-cYd"/>
                             <constraint firstItem="nsU-Jz-E5W" firstAttribute="leading" secondItem="KjQ-94-ftf" secondAttribute="leading" constant="20" id="SiX-m7-iOR"/>
+                            <constraint firstItem="PAz-cL-Qty" firstAttribute="centerX" secondItem="Ssu-ZK-rNe" secondAttribute="centerX" id="ctl-MW-79X"/>
                             <constraint firstItem="pk7-C0-t6y" firstAttribute="leading" secondItem="KjQ-94-ftf" secondAttribute="leading" id="jMD-fi-il5"/>
                             <constraint firstItem="KjQ-94-ftf" firstAttribute="trailing" secondItem="nsU-Jz-E5W" secondAttribute="trailing" constant="20" id="jW1-Co-W6e"/>
-                            <constraint firstItem="bE9-Ch-xBv" firstAttribute="top" secondItem="0ja-KW-xfP" secondAttribute="bottom" constant="20" id="lRf-Xm-czx"/>
                             <constraint firstItem="bE9-Ch-xBv" firstAttribute="leading" secondItem="KjQ-94-ftf" secondAttribute="leading" constant="20" id="ocP-gW-YTX"/>
                             <constraint firstItem="qwA-2y-c1d" firstAttribute="top" secondItem="KjQ-94-ftf" secondAttribute="top" constant="35" id="pGb-QZ-lod"/>
                             <constraint firstItem="qwA-2y-c1d" firstAttribute="centerX" secondItem="Ssu-ZK-rNe" secondAttribute="centerX" id="qah-tf-Iiy"/>
                             <constraint firstItem="pk7-C0-t6y" firstAttribute="top" secondItem="OuQ-lv-xT9" secondAttribute="bottom" constant="20" id="t2R-7B-HWX"/>
-                            <constraint firstItem="0ja-KW-xfP" firstAttribute="centerX" secondItem="Ssu-ZK-rNe" secondAttribute="centerX" id="tBh-gn-P3R"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" image="person" catalog="system" id="v02-k8-PXw"/>
                     <connections>
                         <outlet property="addButton" destination="OuQ-lv-xT9" id="vAX-sX-00R"/>
+                        <outlet property="cameraButton" destination="8or-og-0D6" id="Gkg-PH-Ycu"/>
                         <outlet property="editPictureButton" destination="0ja-KW-xfP" id="IiQ-pc-wWt"/>
                         <outlet property="nameLabel" destination="bE9-Ch-xBv" id="4r5-v7-kKr"/>
                         <outlet property="nameTextField" destination="nsU-Jz-E5W" id="Oph-pH-HpN"/>
@@ -143,6 +157,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera.fill" catalog="system" width="128" height="93"/>
         <image name="person" catalog="system" width="128" height="121"/>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
         <image name="phone" catalog="system" width="128" height="115"/>
