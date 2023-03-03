@@ -22,8 +22,14 @@ class CustomTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        userImageView.image = UIImage(systemName: "person.circle.fill")
-        nameLabel.text = "Teste"
+        
+        selectionStyle = .none
+
+    }
+    
+    public func setupCell(profile: Profile) {
+        userImageView.image = profile.photo
+        nameLabel.text = profile.name
     }
     
 }
